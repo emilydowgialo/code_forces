@@ -40,6 +40,7 @@ def side_measurer(side, a):
     return num_tiles
 
 
+###############################################################################
 # http://codeforces.com/problemset/problem/71/A
 def too_long_words(word):
     """ If word is longer than 10 letters return the first and last letters of
@@ -52,6 +53,7 @@ def too_long_words(word):
     word
     """
 
+    # If work is longer than 10 letters, print the word according to these rules
     if len(word) > 10:
         print word[0] + str(len(word[1:-1])) + word[-1]
 
@@ -71,17 +73,20 @@ def too_long_words(word):
 #         too_long_words(input_split[count + 1])
 #         count += 1
 
+# c is the number of words to get from stdin, so this loops up until that number
 # c = raw_input()
 # count = 0
 # while count < int(c):
 #     too_long_words(raw_input())
 #     count += 1
 
-
+###############################################################################
 # http://codeforces.com/problemset/problem/158/A
 def next_round(score):
     """ Check if score is higher than what it needs to be """
 
+    # If score is 0 we want to return false otherwise this will incorrectly
+    # return True
     if score == 0:
         return False
 
@@ -91,19 +96,27 @@ def next_round(score):
 
 # d = raw_input()
 d = "4 2"
+
+# d includes the number of participants plus the place in the list of scores
+# where the score to beat is located
 d = d.split()
-print d
+
+# Get the number of participants and the score they need to beat
 num_participants = int(d[0])
 need_higher_than_this_person = int(d[1])
 
+# Initialize the going to next round count at 0
 going_to_next_round = 0
 # scores = raw_input()
 scores = "0 0 0 0"
-scores_split = scores.split()
-need_higher_than_this = scores_split[need_higher_than_this_person - 1]
-print need_higher_than_this
-print scores_split
 
+# Split the scores input to create a list we iterate over
+scores_split = scores.split()
+
+# This is the score to beat
+need_higher_than_this = scores_split[need_higher_than_this_person - 1]
+
+# Check each score using the next_round function to see if it passes the test
 for score in scores_split:
     if int(score) <= 0:
         pass
@@ -111,9 +124,11 @@ for score in scores_split:
     if is_this_more is True:
         going_to_next_round += 1
 
+# Print how many people continue on to the next round
 print going_to_next_round
 
 
+###############################################################################
 # http://codeforces.com/problemset/problem/4/A
 def watermelon(weight):
     """ Check if a watermelon can be divided into 2 even parts
