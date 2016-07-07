@@ -59,6 +59,25 @@ def too_long_words(word):
         print word
 
 
+# def get_words(input):
+
+#     input_split = input.split('\n')
+#     print input_split
+
+#     n = int(input_split[0])
+
+#     count = 0
+#     while count < n:
+#         too_long_words(input_split[count + 1])
+#         count += 1
+
+c = raw_input()
+count = 0
+while count < int(c):
+    too_long_words(raw_input())
+    count += 1
+
+
 # http://codeforces.com/problemset/problem/4/A
 def watermelon(weight):
     """ Check if a watermelon can be divided into 2 even parts
