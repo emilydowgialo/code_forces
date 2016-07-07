@@ -71,11 +71,47 @@ def too_long_words(word):
 #         too_long_words(input_split[count + 1])
 #         count += 1
 
-c = raw_input()
-count = 0
-while count < int(c):
-    too_long_words(raw_input())
-    count += 1
+# c = raw_input()
+# count = 0
+# while count < int(c):
+#     too_long_words(raw_input())
+#     count += 1
+
+
+# http://codeforces.com/problemset/problem/158/A
+def next_round(score):
+    """ Check if score is higher than what it needs to be """
+
+    if score == 0:
+        return False
+
+    if score > int(need_higher_than_this) or score == int(need_higher_than_this):
+        return True
+
+
+# d = raw_input()
+d = "4 2"
+d = d.split()
+print d
+num_participants = int(d[0])
+need_higher_than_this_person = int(d[1])
+
+going_to_next_round = 0
+# scores = raw_input()
+scores = "0 0 0 0"
+scores_split = scores.split()
+need_higher_than_this = scores_split[need_higher_than_this_person - 1]
+print need_higher_than_this
+print scores_split
+
+for score in scores_split:
+    if int(score) <= 0:
+        pass
+    is_this_more = next_round(int(score))
+    if is_this_more is True:
+        going_to_next_round += 1
+
+print going_to_next_round
 
 
 # http://codeforces.com/problemset/problem/4/A
