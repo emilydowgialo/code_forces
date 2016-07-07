@@ -125,7 +125,30 @@ for score in scores_split:
         going_to_next_round += 1
 
 # Print how many people continue on to the next round
-print going_to_next_round
+# print going_to_next_round
+
+
+###############################################################################
+# http://codeforces.com/problemset/problem/118/A
+
+
+# f = raw_input()
+f = "aBAcAba"
+f = f.lower()
+f = list(f)
+vowels = ['a', 'o', 'y', 'e', 'u', 'i']
+
+not_a_vowel = []
+
+for letter in f:
+    if letter not in vowels:
+        not_a_vowel.append(letter)
+
+without_vowels = ""
+for letter in not_a_vowel:
+    without_vowels = without_vowels + "." + letter
+
+# print without_vowels
 
 
 ###############################################################################
